@@ -50,7 +50,6 @@ const { values } = require("lodash");
 
 const peresechenie = (...args) => {
   const result = [];
-  const set = new Set();
 
   for (const arg of args) {
     let values;
@@ -60,14 +59,7 @@ const peresechenie = (...args) => {
     } else if (typeof arg === "object") {
       values = Object.values(arg);
     }
-
-    for (const value of values) {
-      if (set.has(value)) {
-        result.push(value);
-      } else {
-        set.add(value);
-      }
-    }
+    result = result.concat(values);
   }
 
   return result;
