@@ -142,10 +142,14 @@ const deepObj = {
   },
 };
 
-const path = "[0].level2[0].level3[0].level4[0].level5[0]";
+const pathArr = "[0].level2[0].level3[0].level4[0].level5[0]";
+
 const pathObj = "level1.level2.level3.level4.level5";
-const resultArr = getPath(deepArr, path);
+
+const resultArr = getPath(deepArr, pathArr);
+
 const resultObj = getPath(deepObj, pathObj);
 
 console.log(resultArr);
+
 console.log(resultObj);
